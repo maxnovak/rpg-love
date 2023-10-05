@@ -38,3 +38,6 @@ luac.out
 *.i*86
 *.x86_64
 *.hex
+
+# Tiled session info
+rpg-love.tiled-session
