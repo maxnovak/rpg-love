@@ -1,14 +1,15 @@
+require 'resize'
+
 function love.load()
     sti = require 'submodules/simple-tiled-implementation/sti'
 
-    windowWidth  = love.graphics.getWidth()
-    windowHeight = love.graphics.getHeight()
-    love.window.setMode(1200, 800)
-    print(windowHeight, windowWidth)
+    window = {translateX = 0, translateY = 0, scale = 2.5, width = 480, height = 320}
+    love.window.setMode (1200, 800, {resizable=true, borderless=false})
+    resize (1200, 800)
 
     road = sti('maps/road.lua')
 end
 
 function love.draw()
-    road:draw(0, 0, 2.5, 2.5)
+    road:draw(0, 0, window.scale, window.scale)
 end
