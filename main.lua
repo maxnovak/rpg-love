@@ -7,8 +7,7 @@ function love.load()
     love.graphics.setDefaultFilter("nearest", "nearest")
 
     window = {translateX = 0, translateY = 0, scale = 2.5, width = 480, height = 320}
-    love.window.setMode (1200, 800, {resizable=true, borderless=false})
-    resize (1200, 800)
+    love.window.setMode (1200, 800, {resizable=false, borderless=false})
 
     world = windfield.newWorld(0, 0)
     road = sti('sprites/maps/road.lua')
