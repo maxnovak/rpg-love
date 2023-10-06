@@ -24,6 +24,15 @@ function love.load()
     player.animations.right = anim8.newAnimation(player.grid('1-4', 3), 0.2)
     player.animations.up = anim8.newAnimation(player.grid('1-4', 4), 0.2)
     player.anim = player.animations.down
+
+    walls = {}
+    if road.layers["Walls"] then
+        for i, wall in pairs(road.layers["Walls"].objects) do
+            local collider = world:newRectangleCollider(wall.x*window.scale, wall.y*window.scale, wall.width*window.scale, wall.height*window.scale)
+            collider:setType('static')
+            table.insert(walls, collider)
+        end
+    end
 end
 
 function love.draw()
