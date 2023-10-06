@@ -7,7 +7,7 @@ function love.load()
     love.window.setMode (1200, 800, {resizable=true, borderless=false})
     resize (1200, 800)
 
-    road = sti('maps/road.lua')
+    road = sti('sprites/maps/road.lua')
 end
 
 function love.draw()
