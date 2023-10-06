@@ -7,3 +7,6 @@
 [submodule "submodules/anim8"]
 	path = submodules/anim8
 	url = git@github.com:kikito/anim8.git
+[submodule "submodules/windfield"]
+	path = submodules/windfield
+	url = git@github.com:a327ex/windfield.git
