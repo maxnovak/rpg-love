@@ -1,3 +1,9 @@
 [submodule "submodules/simple-tiled-implementation"]
 	path = submodules/simple-tiled-implementation
 	url = git@github.com:karai17/Simple-Tiled-Implementation.git
+[submodule "anim8"]
+	path = anim8
+	url = git@github.com:kikito/anim8.git
+[submodule "submodules/anim8"]
+	path = submodules/anim8
+	url = git@github.com:kikito/anim8.git
