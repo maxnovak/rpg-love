@@ -26,22 +26,22 @@ function love.update(dt)
     local vx = 0
     local vy = 0
 
-    if love.keyboard.isDown("right") then
+    if love.keyboard.isDown("right") or love.keyboard.isDown("d") then
         vx = Player.speed
         Player.anim = Player.animations.right
         isMoving = true
     end
-    if love.keyboard.isDown("left") then
+    if love.keyboard.isDown("left") or love.keyboard.isDown("a") then
         vx = -Player.speed
         Player.anim = Player.animations.left
         isMoving = true
     end
-    if love.keyboard.isDown("down") then
+    if love.keyboard.isDown("down") or love.keyboard.isDown("s") then
         vy = Player.speed
         Player.anim = Player.animations.down
         isMoving = true
     end
-    if love.keyboard.isDown("up") then
+    if love.keyboard.isDown("up") or love.keyboard.isDown("w") then
         vy = -Player.speed
         Player.anim = Player.animations.up
         isMoving = true
