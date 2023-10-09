@@ -30,21 +30,51 @@ function love.update(dt)
         vx = Player.speed
         Player.anim = Player.animations.right
         isMoving = true
+        Player.direction = "right"
     end
     if love.keyboard.isDown("left") or love.keyboard.isDown("a") then
         vx = -Player.speed
         Player.anim = Player.animations.left
         isMoving = true
+        Player.direction = "left"
     end
     if love.keyboard.isDown("down") or love.keyboard.isDown("s") then
         vy = Player.speed
         Player.anim = Player.animations.down
         isMoving = true
+        Player.direction = "down"
     end
     if love.keyboard.isDown("up") or love.keyboard.isDown("w") then
         vy = -Player.speed
         Player.anim = Player.animations.up
         isMoving = true
+        Player.direction = "up"
+    end
+
+    if love.keyboard.isDown("space") then
+        local px, py = Player.collider:getPosition()
+        if Player.direction == "right" then
+            px = px + 60
+        elseif Player.direction == "left" then
+            px = px - 60
+        elseif Player.direction == "up" then
+            py = py - 60
+        elseif Player.direction == "down" then
+            py = py + 60
+        end
+        local colliders = World:queryCircleArea(px, py, 5, {"Chest", "Sign"})
+        if #colliders > 0 then
+            for i, chest in pairs(Chests) do
+                if chest.x*Window.scale == colliders[1]:getX() then
+                    print(chest.id)
+                end
+            end
+            for i, sign in pairs(Signs) do
+                if sign.x*Window.scale == colliders[1]:getX() then
+                    print(sign.id)
+                end
+            end
+        end
     end
 
     Player.collider:setLinearVelocity(vx, vy)
