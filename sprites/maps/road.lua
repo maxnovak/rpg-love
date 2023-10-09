@@ -9,8 +9,8 @@ return {
   height = 20,
   tilewidth = 16,
   tileheight = 16,
-  nextlayerid = 7,
-  nextobjectid = 20,
+  nextlayerid = 8,
+  nextobjectid = 23,
   properties = {},
   tilesets = {
     {
@@ -192,6 +192,48 @@ return {
     {
       type = "objectgroup",
       draworder = "topdown",
+      id = 7,
+      name = "Interactable",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 21,
+          name = "Chest",
+          type = "",
+          shape = "rectangle",
+          x = 208,
+          y = 160,
+          width = 16,
+          height = 16,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 22,
+          name = "Sign",
+          type = "",
+          shape = "rectangle",
+          x = 352,
+          y = 112,
+          width = 16,
+          height = 16,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
       id = 6,
       name = "Walls",
       class = "",
@@ -238,32 +280,6 @@ return {
           y = 160,
           width = 48,
           height = 64,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 10,
-          name = "Chest",
-          type = "",
-          shape = "rectangle",
-          x = 208,
-          y = 160,
-          width = 16,
-          height = 16,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 11,
-          name = "Sign",
-          type = "",
-          shape = "rectangle",
-          x = 352,
-          y = 112,
-          width = 16,
-          height = 16,
           rotation = 0,
           visible = true,
           properties = {}
