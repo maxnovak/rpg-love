@@ -7,7 +7,7 @@ permissions:
   contents: write
 jobs:
   build-windows:
-    concurrency: ci-${{ github.ref }}
+    concurrency: ci-windows-${{ github.ref }}
     runs-on: windows-latest
     steps:
       - name: Checkout 🛎️
@@ -26,4 +26,28 @@ jobs:
         with:
           name: RPG-Love-Windowsx64
           path: RPG-Love.exe
+          if-no-files-found: error
+  build-mac:
+    concurrency: ci-mac-${{ github.ref }}
+    runs-on: macos-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - run: zip -9 -r RPG-Love.love .
+      - run: curl -LO https://github.com/love2d/love/releases/download/11.4/love-11.4-macos.zip
+      - run: unzip love-11.4-macos.zip
+      - run: mv love.app RPG-Love.app
+      - run: mv RPG-Love.love RPG-Love.app/Contents/Resources/
+      - run: rm RPG-Love.app/Contents/Info.plist
+      - run: mv buildResources/Info.plist RPG-Love.app/Contents/Info.plist
+      - run: zip -yr RPG-Love-MacOs.zip RPG-Love.app
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: RPG-Love-MacOs
+          path: RPG-Love-MacOs.zip
           if-no-files-found: error
