@@ -1,0 +1,29 @@
+name: Build and Deploy
+on:
+  push:
+    branches:
+      - main
+permissions:
+  contents: write
+jobs:
+  build-windows:
+    concurrency: ci-${{ github.ref }}
+    runs-on: windows-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - run: 7z a -tzip RPG-Love.love *
+      - run: 7z d RPG-Love.love -r *.git* .vscode
+      - run: curl -LO https://github.com/love2d/love/releases/download/11.4/love-11.4-win64.zip
+      - run: 7z e love-11.4-win64.zip
+      - run: cmd /c copy /b love.exe+RPG-Love.love RPG-Love.exe
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: RPG-Love-Windowsx64
+          path: RPG-Love.exe
+          if-no-files-found: error
