@@ -28,16 +28,16 @@
   <object id="31" name="Fence" x="208" y="80" width="16" height="48"/>
  </objectgroup>
  <objectgroup id="7" name="Interactable">
-  <object id="15" name="Door" x="416" y="80" width="16" height="16"/>
-  <object id="16" name="Item" x="80" y="112" width="16" height="16"/>
-  <object id="17" name="Item" x="112" y="112" width="16" height="16"/>
-  <object id="18" name="Item" x="144" y="112" width="16" height="16"/>
-  <object id="19" name="Item" x="176" y="112" width="16" height="16"/>
-  <object id="20" name="Item" x="176" y="160" width="16" height="16"/>
-  <object id="21" name="Item" x="144" y="160" width="16" height="16"/>
-  <object id="22" name="Item" x="112" y="160" width="16" height="16"/>
-  <object id="23" name="Item" x="80" y="160" width="16" height="16"/>
-  <object id="32" name="Exit" x="0" y="304" width="480" height="16"/>
+  <object id="15" type="Door" x="416" y="80" width="16" height="16"/>
+  <object id="16" name="Carrot" type="Item" x="80" y="112" width="16" height="16"/>
+  <object id="17" name="Carrot" type="Item" x="112" y="112" width="16" height="16"/>
+  <object id="18" name="Carrot" type="Item" x="144" y="112" width="16" height="16"/>
+  <object id="19" name="Carrot" type="Item" x="176" y="112" width="16" height="16"/>
+  <object id="20" name="Carrot" type="Item" x="176" y="160" width="16" height="16"/>
+  <object id="21" name="Carrot" type="Item" x="144" y="160" width="16" height="16"/>
+  <object id="22" name="Carrot" type="Item" x="112" y="160" width="16" height="16"/>
+  <object id="23" name="Carrot" type="Item" x="80" y="160" width="16" height="16"/>
+  <object id="32" name="ExitRoad" type="Exit" x="0" y="304" width="480" height="16"/>
  </objectgroup>
  <layer id="1" name="Tile Layer 1" width="30" height="20">
   <data encoding="csv">

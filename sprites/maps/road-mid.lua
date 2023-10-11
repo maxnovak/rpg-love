@@ -361,8 +361,8 @@ return {
       objects = {
         {
           id = 7,
-          name = "Sign",
-          type = "",
+          name = "",
+          type = "Sign",
           shape = "rectangle",
           x = 416,
           y = 224,
@@ -374,8 +374,8 @@ return {
         },
         {
           id = 8,
-          name = "Sign",
-          type = "",
+          name = "",
+          type = "Sign",
           shape = "rectangle",
           x = 32,
           y = 256,
@@ -387,8 +387,8 @@ return {
         },
         {
           id = 21,
-          name = "Exit",
-          type = "",
+          name = "ExitRoad",
+          type = "Exit",
           shape = "rectangle",
           x = 176,
           y = 0,
@@ -400,8 +400,8 @@ return {
         },
         {
           id = 22,
-          name = "Exit",
-          type = "",
+          name = "ExitTown",
+          type = "Exit",
           shape = "rectangle",
           x = 464,
           y = 224,

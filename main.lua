@@ -18,7 +18,7 @@ function love.load()
 end
 
 function love.draw()
-    Road:draw(0, 0, Window.scale, Window.scale)
+    Zone:draw(0, 0, Window.scale, Window.scale)
     Player.anim:draw(Player.spriteSheet, Player.x-12.5, Player.y-25, nil, Window.scale, Window.scale)
     if TextToRender then
         love.graphics.print(TextToRender)

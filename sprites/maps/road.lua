@@ -10,7 +10,7 @@ return {
   tilewidth = 16,
   tileheight = 16,
   nextlayerid = 8,
-  nextobjectid = 23,
+  nextobjectid = 26,
   properties = {},
   tilesets = {
     {
@@ -205,8 +205,8 @@ return {
       objects = {
         {
           id = 21,
-          name = "Chest",
-          type = "",
+          name = "",
+          type = "Chest",
           shape = "rectangle",
           x = 208,
           y = 160,
@@ -218,12 +218,38 @@ return {
         },
         {
           id = 22,
-          name = "Sign",
-          type = "",
+          name = "",
+          type = "Sign",
           shape = "rectangle",
           x = 352,
           y = 112,
           width = 16,
+          height = 16,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 24,
+          name = "ExitRoadMid",
+          type = "Exit",
+          shape = "rectangle",
+          x = 176,
+          y = 304,
+          width = 48,
+          height = 16,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 23,
+          name = "ExitHouse",
+          type = "Exit",
+          shape = "rectangle",
+          x = 16,
+          y = 0,
+          width = 448,
           height = 16,
           rotation = 0,
           visible = true,

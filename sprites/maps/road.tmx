@@ -10,8 +10,10 @@
  <tileset firstgid="110" source="objects.tsx"/>
  <tileset firstgid="318" source="chest_01.tsx"/>
  <objectgroup id="7" name="Interactable">
-  <object id="21" name="Chest" x="208" y="160" width="16" height="16"/>
-  <object id="22" name="Sign" x="352" y="112" width="16" height="16"/>
+  <object id="21" type="Chest" x="208" y="160" width="16" height="16"/>
+  <object id="22" type="Sign" x="352" y="112" width="16" height="16"/>
+  <object id="24" name="ExitRoadMid" type="Exit" x="176" y="304" width="48" height="16"/>
+  <object id="23" name="ExitHouse" type="Exit" x="16" y="0" width="448" height="16"/>
  </objectgroup>
  <objectgroup id="6" name="Walls" opacity="0">
   <object id="5" name="Fenced Area" x="368" y="32" width="80" height="80"/>
@@ -21,8 +23,6 @@
   <object id="14" name="Trees Edge" x="0" y="304" width="176" height="16"/>
   <object id="15" name="Trees Edge" x="224" y="304" width="256" height="16"/>
   <object id="16" name="Trees Edge" x="464" y="0" width="16" height="320"/>
-  <object id="23" name="Exit" x="16" y="0" width="448" height="16"/>
-  <object id="24" name="Exit" x="176" y="304" width="48" height="16"/>
  </objectgroup>
  <layer id="1" name="Tile Layer 1" width="30" height="20">
   <data encoding="csv">
