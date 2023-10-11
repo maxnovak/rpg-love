@@ -1,6 +1,7 @@
 require 'resize'
 require 'player/setup'
 require 'world/setup'
+require 'world/dialogue'
 
 function love.load()
     STI = require 'submodules/simple-tiled-implementation/sti'
@@ -19,6 +20,9 @@ end
 function love.draw()
     Road:draw(0, 0, Window.scale, Window.scale)
     Player.anim:draw(Player.spriteSheet, Player.x-12.5, Player.y-25, nil, Window.scale, Window.scale)
+    if TextToRender then
+        love.graphics.print(TextToRender)
+    end
 end
 
 function love.update(dt)
@@ -75,6 +79,18 @@ function love.update(dt)
                  and sign.y*Window.scale == colliders[1]:getY() then
                     print(sign.id)
                 end
+            end
+            local itemToRemove
+            for i, item in pairs(Items) do
+                if item.x*Window.scale == colliders[1]:getX()
+                 and item.y*Window.scale == colliders[1]:getY()
+                 and item.status == "ItemPresent" then
+                    TextToRender = Dialogue[item.status]
+                    itemToRemove = colliders[1]
+                end
+            end
+            if itemToRemove then
+                itemToRemove:destroy()
             end
         end
     end

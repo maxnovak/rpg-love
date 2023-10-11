@@ -1,4 +1,5 @@
 require "world/chests"
+require "world/items"
 require "world/signs"
 
 Road = {}
@@ -6,9 +7,10 @@ World = {}
 
 function SetupWorld()
     World = Windfield.newWorld(0, 0)
-    Road = STI('sprites/maps/road.lua')
+    Road = STI('sprites/maps/house.lua')
     World:addCollisionClass('Wall')
     World:addCollisionClass('Chest')
+    World:addCollisionClass('Item')
     World:addCollisionClass('Sign')
 
     if Road.layers["Walls"] then
@@ -30,6 +32,10 @@ function SetupWorld()
             if object.name == 'Sign' then
                 collider:setCollisionClass('Sign')
                 SpawnSign(object.x, object.y, object.width, object.height, object.id)
+            end
+            if object.name == 'Item' then
+                collider:setCollisionClass('Sign')
+                SpawnItems(object.x, object.y, object.width, object.height, object.id)
             end
         end
     end
