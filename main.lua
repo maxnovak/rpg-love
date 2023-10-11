@@ -13,12 +13,24 @@ function love.load()
     Window = {translateX = 0, translateY = 0, scale = 2.5, width = 480, height = 320}
     love.window.setMode (1200, 800, {resizable=false, borderless=false})
 
+    ItemToRemove = {}
+    ItemToRemove.newImage = love.graphics.newImage('sprites/maps/mystic_woods_free_2.1/sprites/tilesets/plains.png')
+    ItemToRemove.imageQuad = love.graphics.newQuad(32, 16, 16, 16, ItemToRemove.newImage)
+    ItemToRemove.coordinates = {}
+
     SetupWorld()
     SetUpPlayer()
 end
 
 function love.draw()
     Zone:draw(0, 0, Window.scale, Window.scale)
+    if #ItemToRemove.coordinates > 0 then
+        for i, item in ipairs(ItemToRemove.coordinates) do
+            if item.zone == Zone.name then
+                love.graphics.draw(ItemToRemove.newImage, ItemToRemove.imageQuad, item.x-20, item.y-20, nil,  Window.scale, Window.scale)
+            end
+        end
+    end
     Player.anim:draw(Player.spriteSheet, Player.x-12.5, Player.y-25, nil, Window.scale, Window.scale)
     if TextToRender then
         love.graphics.print(TextToRender)
@@ -80,17 +92,17 @@ function love.update(dt)
                     print(sign.id)
                 end
             end
-            local itemToRemove
             for i, item in pairs(Items) do
                 if item.x*Window.scale == colliders[1]:getX()
                  and item.y*Window.scale == colliders[1]:getY()
                  and item.status == "ItemPresent" then
                     TextToRender = Dialogue[item.status]
-                    itemToRemove = colliders[1]
+                    ItemToRemove.collider = colliders[1]
+                    table.insert(ItemToRemove.coordinates, {x = colliders[1]:getX(), y = colliders[1]:getY(), zone = Zone.name})
                 end
             end
-            if itemToRemove then
-                itemToRemove:destroy()
+            if ItemToRemove.collider then
+                ItemToRemove.collider:destroy()
             end
         end
     end

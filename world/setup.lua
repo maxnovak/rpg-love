@@ -8,6 +8,7 @@ World = {}
 function SetupWorld()
     World = Windfield.newWorld(0, 0)
     Zone = STI('sprites/maps/house.lua')
+    Zone.name = "house"
     World:addCollisionClass('Wall')
     World:addCollisionClass('Chest')
     World:addCollisionClass('Item')
