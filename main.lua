@@ -65,12 +65,14 @@ function love.update(dt)
         local colliders = World:queryCircleArea(px, py, 5, {"Chest", "Sign"})
         if #colliders > 0 then
             for i, chest in pairs(Chests) do
-                if chest.x*Window.scale == colliders[1]:getX() then
+                if chest.x*Window.scale == colliders[1]:getX()
+                 and chest.y*Window.scale == colliders[1]:getY() then
                     print(chest.id)
                 end
             end
             for i, sign in pairs(Signs) do
-                if sign.x*Window.scale == colliders[1]:getX() then
+                if sign.x*Window.scale == colliders[1]:getX()
+                 and sign.y*Window.scale == colliders[1]:getY() then
                     print(sign.id)
                 end
             end
