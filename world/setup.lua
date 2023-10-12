@@ -36,7 +36,7 @@ function SetupWorld()
                 SpawnSign(object.x, object.y, object.width, object.height, object.name)
             end
             if object.type == 'Item' then
-                collider:setCollisionClass('Sign')
+                collider:setCollisionClass('Item')
                 SpawnItems(object.x, object.y, object.width, object.height, object.name)
             end
         end

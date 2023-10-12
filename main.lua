@@ -91,7 +91,7 @@ function love.update(dt)
         elseif Player.direction == "down" then
             py = py + 60
         end
-        local colliders = World:queryCircleArea(px, py, 5, {"Chest", "Sign"})
+        local colliders = World:queryCircleArea(px, py, 5, {"Chest", "Sign", "Item"})
         if #colliders > 0 then
             for i, chest in pairs(Chests) do
                 if chest.x*Window.scale == colliders[1]:getX()
