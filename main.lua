@@ -1,4 +1,5 @@
 require 'resize'
+require 'player/dialogueBox'
 require 'player/setup'
 require 'world/setup'
 require 'world/dialogue'
@@ -10,8 +11,8 @@ function love.load()
 
     love.graphics.setDefaultFilter("nearest", "nearest")
 
-    Window = {translateX = 0, translateY = 0, scale = 2.5, width = 480, height = 320}
-    love.window.setMode (1200, 800, {resizable=false, borderless=false})
+    Window = {translateX = 0, translateY = 0, scale = 2.5, width = 1200, height = 800}
+    love.window.setMode (Window.width, Window.height, {resizable=false, borderless=false})
 
     ItemToRemove = {}
     ItemToRemove.newImage = love.graphics.newImage('sprites/maps/mystic_woods_free_2.1/sprites/tilesets/plains.png')
@@ -33,7 +34,7 @@ function love.draw()
     end
     Player.anim:draw(Player.spriteSheet, Player.x-12.5, Player.y-25, nil, Window.scale, Window.scale)
     if TextToRender then
-        love.graphics.print(TextToRender)
+        DrawDialog(TextToRender)
     end
 end
 
@@ -41,6 +42,18 @@ function love.update(dt)
     local isMoving = false
     local vx = 0
     local vy = 0
+
+    if TextToRender and Dialogue.timer > 0 then
+        Dialogue.timer = Dialogue.timer - dt
+        return
+    end
+
+    if TextToRender then
+        if love.keyboard.isDown("space") then
+            TextToRender = nil
+        end
+        return
+    end
 
     if love.keyboard.isDown("right") or love.keyboard.isDown("d") then
         vx = Player.speed
@@ -97,6 +110,7 @@ function love.update(dt)
                  and item.y*Window.scale == colliders[1]:getY()
                  and item.status == "ItemPresent" then
                     TextToRender = Dialogue[item.status]
+                    Dialogue.timer = 0.3
                     ItemToRemove.collider = colliders[1]
                     table.insert(ItemToRemove.coordinates, {x = colliders[1]:getX(), y = colliders[1]:getY(), zone = Zone.name})
                 end

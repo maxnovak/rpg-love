@@ -1,3 +1,3 @@
 Dialogue = {
-    ItemPresent = "A yummy looking carrot"
+    ItemPresent = "A yummy looking carrot..."
 }
