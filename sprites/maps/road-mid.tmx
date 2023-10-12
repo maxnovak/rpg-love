@@ -30,8 +30,12 @@
  <objectgroup id="5" name="Interactable">
   <object id="7" type="Sign" x="416" y="224" width="16" height="16"/>
   <object id="8" type="Sign" x="32" y="256" width="16" height="16"/>
-  <object id="21" name="ExitRoad" type="Exit" x="176" y="0" width="48" height="16"/>
-  <object id="22" name="ExitTown" type="Exit" x="464" y="224" width="16" height="96"/>
+  <object id="21" name="Road" type="Exit" x="176" y="0" width="48" height="16">
+   <properties>
+    <property name="NextZoneY" value="730"/>
+   </properties>
+  </object>
+  <object id="22" name="Town" type="Exit" x="464" y="224" width="16" height="96"/>
  </objectgroup>
  <layer id="1" name="Tile Layer 1" width="30" height="20">
   <data encoding="csv">

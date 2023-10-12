@@ -231,7 +231,7 @@ return {
         },
         {
           id = 24,
-          name = "ExitRoadMid",
+          name = "RoadMid",
           type = "Exit",
           shape = "rectangle",
           x = 176,
@@ -240,11 +240,13 @@ return {
           height = 16,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["NextZoneY"] = "70"
+          }
         },
         {
           id = 23,
-          name = "ExitHouse",
+          name = "House",
           type = "Exit",
           shape = "rectangle",
           x = 16,
@@ -253,7 +255,9 @@ return {
           height = 16,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["NextZoneY"] = "730"
+          }
         }
       }
     },

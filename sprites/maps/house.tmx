@@ -37,7 +37,11 @@
   <object id="21" name="Carrot" type="Item" x="144" y="160" width="16" height="16"/>
   <object id="22" name="Carrot" type="Item" x="112" y="160" width="16" height="16"/>
   <object id="23" name="Carrot" type="Item" x="80" y="160" width="16" height="16"/>
-  <object id="32" name="ExitRoad" type="Exit" x="0" y="304" width="480" height="16"/>
+  <object id="32" name="Road" type="Exit" x="0" y="304" width="480" height="16">
+   <properties>
+    <property name="NextZoneY" value="70"/>
+   </properties>
+  </object>
  </objectgroup>
  <layer id="1" name="Tile Layer 1" width="30" height="20">
   <data encoding="csv">

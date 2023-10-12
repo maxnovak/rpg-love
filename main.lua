@@ -21,6 +21,7 @@ function love.load()
 
     SetupWorld()
     SetUpPlayer()
+    LoadZone("House")
 end
 
 function love.draw()
@@ -119,6 +120,11 @@ function love.update(dt)
                 ItemToRemove.collider:destroy()
             end
         end
+    end
+
+    if Player.collider:enter('Exit') then
+        local collisionData = Player.collider:getEnterCollisionData('Exit')
+        LoadZone(collisionData.collider.id, collisionData.collider.nextX, collisionData.collider.nextY)
     end
 
     Player.collider:setLinearVelocity(vx, vy)

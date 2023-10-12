@@ -6,7 +6,6 @@ function DrawDialog(text)
     local box = love.graphics.newImage('sprites/HUD/DialogueBoxSimple.png')
     local xPlacement = (Window.width - box:getWidth()*Window.scale) / 2
     local yPlacement = (Window.height - box:getHeight()*Window.scale)
-    print(100/Window.scale)
     local closeX = (Window.width + box:getWidth()*Window.scale) / 2 - xClose*Window.scale
     local closeY = (Window.height - box:getHeight()*Window.scale) + YClose*Window.scale
     love.graphics.draw(box, xPlacement, yPlacement, nil, Window.scale, Window.scale)

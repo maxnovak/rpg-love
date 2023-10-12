@@ -387,7 +387,7 @@ return {
         },
         {
           id = 21,
-          name = "ExitRoad",
+          name = "Road",
           type = "Exit",
           shape = "rectangle",
           x = 176,
@@ -396,11 +396,13 @@ return {
           height = 16,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["NextZoneY"] = "730"
+          }
         },
         {
           id = 22,
-          name = "ExitTown",
+          name = "Town",
           type = "Exit",
           shape = "rectangle",
           x = 464,

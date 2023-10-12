@@ -12,8 +12,16 @@
  <objectgroup id="7" name="Interactable">
   <object id="21" type="Chest" x="208" y="160" width="16" height="16"/>
   <object id="22" type="Sign" x="352" y="112" width="16" height="16"/>
-  <object id="24" name="ExitRoadMid" type="Exit" x="176" y="304" width="48" height="16"/>
-  <object id="23" name="ExitHouse" type="Exit" x="16" y="0" width="448" height="16"/>
+  <object id="24" name="RoadMid" type="Exit" x="176" y="304" width="48" height="16">
+   <properties>
+    <property name="NextZoneY" value="70"/>
+   </properties>
+  </object>
+  <object id="23" name="House" type="Exit" x="16" y="0" width="448" height="16">
+   <properties>
+    <property name="NextZoneY" value="730"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup id="6" name="Walls" opacity="0">
   <object id="5" name="Fenced Area" x="368" y="32" width="80" height="80"/>

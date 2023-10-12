@@ -3,6 +3,7 @@ Player = {}
 function SetUpPlayer()
     Player = {x = 530, y = 20, speed = 300}
     Player.collider = World:newBSGRectangleCollider(Player.x, Player.y, 30, 40, 10)
+    Player.collider:setCollisionClass('Player')
     Player.collider:setFixedRotation(true)
     Player.spriteSheet = love.graphics.newImage('sprites/characters/player-sheet.png')
     Player.grid = Anim8.newGrid(12, 18, Player.spriteSheet:getWidth(), Player.spriteSheet:getHeight(), 1)
