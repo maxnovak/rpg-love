@@ -1,3 +1,3 @@
 Dialogue = {
-    ItemPresent = "A yummy looking carrot..."
+    timer = 0
 }

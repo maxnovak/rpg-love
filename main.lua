@@ -44,7 +44,7 @@ function love.update(dt)
     local vx = 0
     local vy = 0
 
-    if TextToRender and Dialogue.timer > 0 then
+    if Dialogue.timer > 0 then
         Dialogue.timer = Dialogue.timer - dt
         return
     end
@@ -52,6 +52,7 @@ function love.update(dt)
     if TextToRender then
         if love.keyboard.isDown("space") then
             TextToRender = nil
+            Dialogue.timer = 0.3
         end
         return
     end
@@ -103,21 +104,20 @@ function love.update(dt)
             for i, sign in pairs(Signs) do
                 if sign.x*Window.scale == colliders[1]:getX()
                  and sign.y*Window.scale == colliders[1]:getY() then
-                    print(sign.id)
+                    TextToRender = sign.text
+                    Dialogue.timer = 0.3
                 end
             end
             for i, item in pairs(Items) do
                 if item.x*Window.scale == colliders[1]:getX()
                  and item.y*Window.scale == colliders[1]:getY()
                  and item.status == "ItemPresent" then
-                    TextToRender = Dialogue[item.status]
+                    item.status = "ItemConsumed"
+                    TextToRender = item.text
                     Dialogue.timer = 0.3
-                    ItemToRemove.collider = colliders[1]
+                    colliders[1]:setCollisionClass('ItemConsumed')
                     table.insert(ItemToRemove.coordinates, {x = colliders[1]:getX(), y = colliders[1]:getY(), zone = Zone.name})
                 end
-            end
-            if ItemToRemove.collider then
-                ItemToRemove.collider:destroy()
             end
         end
     end

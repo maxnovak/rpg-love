@@ -14,9 +14,9 @@ function SetupWorld()
     World:addCollisionClass('Wall')
     World:addCollisionClass('Chest')
     World:addCollisionClass('Item')
+    World:addCollisionClass('ItemConsumed', {ignores = {'Player'}})
     World:addCollisionClass('Sign')
     World:addCollisionClass('Exit', {ignores = {'Player'}})
-
 end
 
 function LoadZone(zoneName, playerX, playerY)
@@ -53,11 +53,11 @@ function LoadZone(zoneName, playerX, playerY)
             end
             if object.type == 'Sign' then
                 collider:setCollisionClass('Sign')
-                SpawnSign(object.x, object.y, object.width, object.height, object.name)
+                SpawnSign(object.x, object.y, object.width, object.height, object.name, object.properties.actionText)
             end
             if object.type == 'Item' then
                 collider:setCollisionClass('Item')
-                SpawnItems(object.x, object.y, object.width, object.height, object.name)
+                SpawnItems(object.x, object.y, object.width, object.height, object.name, object.properties.actionText)
             end
             if object.type == "Exit" then
                 collider:setCollisionClass('Exit')
