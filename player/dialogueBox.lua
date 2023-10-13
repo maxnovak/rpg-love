@@ -9,6 +9,6 @@ function DrawDialog(text)
     local closeX = (Window.width + box:getWidth()*Window.scale) / 2 - xClose*Window.scale
     local closeY = (Window.height - box:getHeight()*Window.scale) + YClose*Window.scale
     love.graphics.draw(box, xPlacement, yPlacement, nil, Window.scale, Window.scale)
-    love.graphics.print({{0, 0, 0, 1}, text}, xPlacement+edgeBuffer*Window.scale, yPlacement+edgeBuffer*Window.scale, nil, 2, 2)
+    love.graphics.printf({{0, 0, 0, 1}, text}, xPlacement+edgeBuffer*Window.scale, yPlacement+edgeBuffer*Window.scale, 375, "left", nil, 2, 2)
     love.graphics.print({{0, 0, 0, 1}, "Space to close"}, closeX, closeY, nil, 2, 2)
 end

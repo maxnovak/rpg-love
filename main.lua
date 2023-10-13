@@ -18,6 +18,7 @@ function love.load()
     ItemToRemove.newImage = love.graphics.newImage('sprites/maps/mystic_woods_free_2.1/sprites/tilesets/plains.png')
     ItemToRemove.imageQuad = love.graphics.newQuad(32, 16, 16, 16, ItemToRemove.newImage)
     ItemToRemove.coordinates = {}
+    Event = { carrotCount = 0, status = "farmTime" }
 
     SetupWorld()
     SetUpPlayer()
@@ -111,12 +112,18 @@ function love.update(dt)
             for i, item in pairs(Items) do
                 if item.x*Window.scale == colliders[1]:getX()
                  and item.y*Window.scale == colliders[1]:getY()
+                 and Event.status == "farmTime"
                  and item.status == "ItemPresent" then
+                    Event.carrotCount = Event.carrotCount + 1
                     item.status = "ItemConsumed"
                     TextToRender = item.text
                     Dialogue.timer = 0.3
                     colliders[1]:setCollisionClass('ItemConsumed')
                     table.insert(ItemToRemove.coordinates, {x = colliders[1]:getX(), y = colliders[1]:getY(), zone = Zone.name})
+                    if Event.carrotCount > 3 then
+                        Event.status = "cowTime"
+                        TextToRender = "After you pick up the carrot you hear some sounds to the south."
+                    end
                 end
             end
         end
