@@ -393,8 +393,8 @@ return {
       objects = {
         {
           id = 15,
-          name = "",
-          type = "Door",
+          name = "Door",
+          type = "Sign",
           shape = "rectangle",
           x = 416,
           y = 80,
@@ -402,7 +402,9 @@ return {
           height = 16,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["actionText"] = "Work to be done, no time to sleep."
+          }
         },
         {
           id = 16,

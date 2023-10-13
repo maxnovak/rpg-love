@@ -28,7 +28,11 @@
   <object id="31" name="Fence" x="208" y="80" width="16" height="48"/>
  </objectgroup>
  <objectgroup id="7" name="Interactable">
-  <object id="15" type="Door" x="416" y="80" width="16" height="16"/>
+  <object id="15" name="Door" type="Sign" x="416" y="80" width="16" height="16">
+   <properties>
+    <property name="actionText" value="Work to be done, no time to sleep."/>
+   </properties>
+  </object>
   <object id="16" name="Carrot" type="Item" x="80" y="112" width="16" height="16">
    <properties>
     <property name="actionText" value="A yummy looking carrot..."/>

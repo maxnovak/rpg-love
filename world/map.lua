@@ -4,8 +4,6 @@ MapName = {
     RoadMid = "sprites/maps/road-mid.lua",
 }
 
-Exits = {}
-
 function SpawnExit(collider, exit)
     collider.id = exit.name
     collider.nextX = exit.properties.NextZoneX
