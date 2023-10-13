@@ -415,7 +415,9 @@ return {
           height = 16,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["actionText"] = "A yummy looking carrot..."
+          }
         },
         {
           id = 17,
@@ -428,7 +430,9 @@ return {
           height = 16,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["actionText"] = "A yummy looking carrot..."
+          }
         },
         {
           id = 18,
@@ -441,7 +445,9 @@ return {
           height = 16,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["actionText"] = "A yummy looking carrot..."
+          }
         },
         {
           id = 19,
@@ -454,7 +460,9 @@ return {
           height = 16,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["actionText"] = "A yummy looking carrot..."
+          }
         },
         {
           id = 20,
@@ -467,7 +475,9 @@ return {
           height = 16,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["actionText"] = "A yummy looking carrot..."
+          }
         },
         {
           id = 21,
@@ -480,7 +490,9 @@ return {
           height = 16,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["actionText"] = "A yummy looking carrot..."
+          }
         },
         {
           id = 22,
@@ -493,7 +505,9 @@ return {
           height = 16,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["actionText"] = "A yummy looking carrot..."
+          }
         },
         {
           id = 23,
@@ -506,7 +520,9 @@ return {
           height = 16,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["actionText"] = "A yummy looking carrot..."
+          }
         },
         {
           id = 32,

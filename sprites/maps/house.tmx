@@ -29,14 +29,46 @@
  </objectgroup>
  <objectgroup id="7" name="Interactable">
   <object id="15" type="Door" x="416" y="80" width="16" height="16"/>
-  <object id="16" name="Carrot" type="Item" x="80" y="112" width="16" height="16"/>
-  <object id="17" name="Carrot" type="Item" x="112" y="112" width="16" height="16"/>
-  <object id="18" name="Carrot" type="Item" x="144" y="112" width="16" height="16"/>
-  <object id="19" name="Carrot" type="Item" x="176" y="112" width="16" height="16"/>
-  <object id="20" name="Carrot" type="Item" x="176" y="160" width="16" height="16"/>
-  <object id="21" name="Carrot" type="Item" x="144" y="160" width="16" height="16"/>
-  <object id="22" name="Carrot" type="Item" x="112" y="160" width="16" height="16"/>
-  <object id="23" name="Carrot" type="Item" x="80" y="160" width="16" height="16"/>
+  <object id="16" name="Carrot" type="Item" x="80" y="112" width="16" height="16">
+   <properties>
+    <property name="actionText" value="A yummy looking carrot..."/>
+   </properties>
+  </object>
+  <object id="17" name="Carrot" type="Item" x="112" y="112" width="16" height="16">
+   <properties>
+    <property name="actionText" value="A yummy looking carrot..."/>
+   </properties>
+  </object>
+  <object id="18" name="Carrot" type="Item" x="144" y="112" width="16" height="16">
+   <properties>
+    <property name="actionText" value="A yummy looking carrot..."/>
+   </properties>
+  </object>
+  <object id="19" name="Carrot" type="Item" x="176" y="112" width="16" height="16">
+   <properties>
+    <property name="actionText" value="A yummy looking carrot..."/>
+   </properties>
+  </object>
+  <object id="20" name="Carrot" type="Item" x="176" y="160" width="16" height="16">
+   <properties>
+    <property name="actionText" value="A yummy looking carrot..."/>
+   </properties>
+  </object>
+  <object id="21" name="Carrot" type="Item" x="144" y="160" width="16" height="16">
+   <properties>
+    <property name="actionText" value="A yummy looking carrot..."/>
+   </properties>
+  </object>
+  <object id="22" name="Carrot" type="Item" x="112" y="160" width="16" height="16">
+   <properties>
+    <property name="actionText" value="A yummy looking carrot..."/>
+   </properties>
+  </object>
+  <object id="23" name="Carrot" type="Item" x="80" y="160" width="16" height="16">
+   <properties>
+    <property name="actionText" value="A yummy looking carrot..."/>
+   </properties>
+  </object>
   <object id="32" name="Road" type="Exit" x="0" y="304" width="480" height="16">
    <properties>
     <property name="NextZoneY" value="70"/>

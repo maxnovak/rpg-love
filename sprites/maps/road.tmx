@@ -11,7 +11,11 @@
  <tileset firstgid="318" source="chest_01.tsx"/>
  <objectgroup id="7" name="Interactable">
   <object id="21" type="Chest" x="208" y="160" width="16" height="16"/>
-  <object id="22" type="Sign" x="352" y="112" width="16" height="16"/>
+  <object id="22" type="Sign" x="352" y="112" width="16" height="16">
+   <properties>
+    <property name="actionText" value="We stole your cow!Try to get it back if you can!"/>
+   </properties>
+  </object>
   <object id="24" name="RoadMid" type="Exit" x="176" y="304" width="48" height="16">
    <properties>
     <property name="NextZoneY" value="70"/>

@@ -227,7 +227,9 @@ return {
           height = 16,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["actionText"] = "We stole your cow!Try to get it back if you can!"
+          }
         },
         {
           id = 24,

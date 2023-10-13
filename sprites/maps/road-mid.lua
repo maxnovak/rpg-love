@@ -361,7 +361,7 @@ return {
       objects = {
         {
           id = 7,
-          name = "",
+          name = "TownSign",
           type = "Sign",
           shape = "rectangle",
           x = 416,
@@ -370,11 +370,13 @@ return {
           height = 16,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["actionText"] = "Village →"
+          }
         },
         {
           id = 8,
-          name = "",
+          name = "Door",
           type = "Sign",
           shape = "rectangle",
           x = 32,
@@ -383,7 +385,9 @@ return {
           height = 16,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["actionText"] = "This place looks pretty beat up"
+          }
         },
         {
           id = 21,
