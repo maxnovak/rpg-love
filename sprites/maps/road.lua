@@ -205,7 +205,7 @@ return {
       objects = {
         {
           id = 22,
-          name = "",
+          name = "CowMissingSign",
           type = "Sign",
           shape = "rectangle",
           x = 352,
@@ -215,7 +215,9 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["actionText"] = "We stole your cow!Try to get it back if you can!"
+            ["actionText"] = "We stole your cow! Try to get it back if you can!",
+            ["requiredStatus"] = "cowTime",
+            ["triggerEvent"] = "getWeapon"
           }
         },
         {

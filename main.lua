@@ -3,6 +3,7 @@ require 'player/dialogueBox'
 require 'player/setup'
 require 'world/setup'
 require 'world/dialogue'
+require 'world/events'
 
 function love.load()
     STI = require 'submodules/simple-tiled-implementation/sti'
@@ -18,7 +19,6 @@ function love.load()
     ItemToRemove.newImage = love.graphics.newImage('sprites/maps/mystic_woods_free_2.1/sprites/tilesets/plains.png')
     ItemToRemove.imageQuad = love.graphics.newQuad(32, 16, 16, 16, ItemToRemove.newImage)
     ItemToRemove.coordinates = {}
-    Event = { carrotCount = 0, status = "farmTime" }
 
     SetupWorld()
     SetUpPlayer()
@@ -54,6 +54,11 @@ function love.update(dt)
         if love.keyboard.isDown("space") then
             TextToRender = nil
             Dialogue.timer = 0.3
+            if #Event.queuedEvents > 0 then
+                TextToRender = EventPrompt[Event.queuedEvents[1]]
+                Event.status = Event.queuedEvents[1]
+                table.remove(Event.queuedEvents)
+            end
         end
         return
     end
@@ -107,6 +112,9 @@ function love.update(dt)
                  and sign.y*Window.scale == colliders[1]:getY() then
                     TextToRender = sign.text
                     Dialogue.timer = 0.3
+                    if sign.triggerEvent and Event.status == sign.requiredStatus then
+                        table.insert(Event.queuedEvents, sign.triggerEvent)
+                    end
                 end
             end
             for i, item in pairs(Items) do
@@ -122,7 +130,7 @@ function love.update(dt)
                     table.insert(ItemToRemove.coordinates, {x = colliders[1]:getX(), y = colliders[1]:getY(), zone = Zone.name})
                     if Event.carrotCount > 3 then
                         Event.status = "cowTime"
-                        TextToRender = "After you pick up the carrot you hear some sounds to the south."
+                        TextToRender = EventPrompt[Event.status]
                     end
                 end
             end

@@ -10,9 +10,11 @@
  <tileset firstgid="110" source="objects.tsx"/>
  <tileset firstgid="318" source="chest_01.tsx"/>
  <objectgroup id="7" name="Interactable">
-  <object id="22" type="Sign" x="352" y="112" width="16" height="16">
+  <object id="22" name="CowMissingSign" type="Sign" x="352" y="112" width="16" height="16">
    <properties>
-    <property name="actionText" value="We stole your cow!Try to get it back if you can!"/>
+    <property name="actionText" value="We stole your cow! Try to get it back if you can!"/>
+    <property name="requiredStatus" value="cowTime"/>
+    <property name="triggerEvent" value="getWeapon"/>
    </properties>
   </object>
   <object id="24" name="RoadMid" type="Exit" x="176" y="304" width="48" height="16">
