@@ -53,11 +53,11 @@ function LoadZone(zoneName, playerX, playerY)
             end
             if object.type == 'Sign' then
                 collider:setCollisionClass('Sign')
-                SpawnSign(object.x, object.y, object.width, object.height, object.name, object.properties.actionText)
+                SpawnSign(object)
             end
             if object.type == 'Item' then
                 collider:setCollisionClass('Item')
-                SpawnItems(object.x, object.y, object.width, object.height, object.name, object.properties.actionText)
+                SpawnItems(object)
             end
             if object.type == "Exit" then
                 collider:setCollisionClass('Exit')
