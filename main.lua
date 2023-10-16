@@ -113,7 +113,11 @@ function love.update(dt)
                     TextToRender = sign.text
                     Dialogue.timer = 0.3
                     if sign.triggerEvent and Event.status == sign.requiredStatus then
-                        table.insert(Event.queuedEvents, sign.triggerEvent)
+                        if sign.replaceText then
+                            TextToRender = EventPrompt[sign.triggerEvent]
+                        else
+                            table.insert(Event.queuedEvents, sign.triggerEvent)
+                        end
                     end
                 end
             end
@@ -138,8 +142,8 @@ function love.update(dt)
     end
 
     if Player.collider:enter('Exit') then
-        local collisionData = Player.collider:getEnterCollisionData('Exit')
-        LoadZone(collisionData.collider.id, collisionData.collider.nextX, collisionData.collider.nextY)
+        vx, vy = HandleExit(vx, vy)
+        isMoving = false
     end
 
     Player.collider:setLinearVelocity(vx, vy)

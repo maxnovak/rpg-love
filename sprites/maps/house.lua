@@ -403,7 +403,10 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["actionText"] = "Work to be done, no time to sleep."
+            ["actionText"] = "Work to be done, no time to sleep.",
+            ["replaceText"] = "true",
+            ["requiredStatus"] = "getWeapon",
+            ["triggerEvent"] = "weaponAquired"
           }
         },
         {
@@ -538,7 +541,9 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["NextZoneY"] = "70"
+            ["NextZoneY"] = "70",
+            ["blockingEvent"] = "farmTime",
+            ["blockingText"] = "Gotta do my chores before I can have fun"
           }
         }
       }

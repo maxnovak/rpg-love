@@ -8,6 +8,7 @@ function SpawnSign(object)
     sign.text = object.properties.actionText
     sign.triggerEvent = object.properties.triggerEvent
     sign.requiredStatus = object.properties.requiredStatus
+    sign.replaceText = object.properties.replaceText
 
     table.insert(Signs, sign)
 end

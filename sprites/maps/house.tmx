@@ -31,6 +31,9 @@
   <object id="15" name="Door" type="Sign" x="416" y="80" width="16" height="16">
    <properties>
     <property name="actionText" value="Work to be done, no time to sleep."/>
+    <property name="replaceText" value="true"/>
+    <property name="requiredStatus" value="getWeapon"/>
+    <property name="triggerEvent" value="weaponAquired"/>
    </properties>
   </object>
   <object id="16" name="Carrot" type="Item" x="80" y="112" width="16" height="16">
@@ -76,6 +79,8 @@
   <object id="32" name="Road" type="Exit" x="0" y="304" width="480" height="16">
    <properties>
     <property name="NextZoneY" value="70"/>
+    <property name="blockingEvent" value="farmTime"/>
+    <property name="blockingText" value="Gotta do my chores before I can have fun"/>
    </properties>
   </object>
  </objectgroup>

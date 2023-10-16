@@ -20,6 +20,8 @@
   <object id="24" name="RoadMid" type="Exit" x="176" y="304" width="48" height="16">
    <properties>
     <property name="NextZoneY" value="70"/>
+    <property name="blockingEvent" value="cowTime,getWeapon"/>
+    <property name="blockingText" value="You hear some people in the distance"/>
    </properties>
   </object>
   <object id="23" name="House" type="Exit" x="16" y="0" width="448" height="16">

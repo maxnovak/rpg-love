@@ -232,7 +232,9 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["NextZoneY"] = "70"
+            ["NextZoneY"] = "70",
+            ["blockingEvent"] = "cowTime,getWeapon",
+            ["blockingText"] = "You hear some people in the distance"
           }
         },
         {
