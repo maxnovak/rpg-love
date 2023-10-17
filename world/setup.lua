@@ -1,4 +1,5 @@
 require "world/chests"
+require "enemies/setup"
 require "world/items"
 require "world/signs"
 require "world/map"
@@ -7,10 +8,12 @@ Zone = {}
 World = {}
 Walls = {}
 Interactables = {}
+Enemies = {}
 
 function SetupWorld()
     World = Windfield.newWorld(0, 0)
     World:addCollisionClass('Player')
+    World:addCollisionClass('Enemy')
     World:addCollisionClass('Wall')
     World:addCollisionClass('Chest')
     World:addCollisionClass('Item')
@@ -22,6 +25,7 @@ end
 function LoadZone(zoneName, playerX, playerY)
     colliderTableDestroy(Walls)
     colliderTableDestroy(Interactables)
+    colliderTableDestroy(Enemies)
 
     if playerX == nil then
         playerX = Player.collider:getX()
@@ -64,6 +68,16 @@ function LoadZone(zoneName, playerX, playerY)
                 SpawnExit(collider, object)
             end
             table.insert(Interactables, collider)
+        end
+    end
+
+    if Zone.layers["Enemies"] then
+        for i, enemy in pairs(Zone.layers["Enemies"].objects) do
+            local collider = World:newRectangleCollider(enemy.x*Window.scale, enemy.y*Window.scale, 18*Window.scale, 18*Window.scale)
+            collider:setType('static')
+            collider:setCollisionClass('Enemy')
+            enemy = CreateEnemy(enemy, collider)
+            table.insert(Enemies, enemy)
         end
     end
 end

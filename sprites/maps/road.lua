@@ -9,8 +9,8 @@ return {
   height = 20,
   tilewidth = 16,
   tileheight = 16,
-  nextlayerid = 8,
-  nextobjectid = 33,
+  nextlayerid = 9,
+  nextobjectid = 37,
   properties = {},
   tilesets = {
     {
@@ -250,6 +250,52 @@ return {
           visible = true,
           properties = {
             ["NextZoneY"] = "730"
+          }
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 8,
+      name = "Enemies",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 33,
+          name = "7",
+          type = "Enemy",
+          shape = "rectangle",
+          x = 176,
+          y = 304,
+          width = 16,
+          height = 16,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["startDirection"] = "right"
+          }
+        },
+        {
+          id = 34,
+          name = "2",
+          type = "Enemy",
+          shape = "rectangle",
+          x = 208,
+          y = 304,
+          width = 16,
+          height = 16,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["startDirection"] = "left"
           }
         }
       }

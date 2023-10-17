@@ -35,6 +35,13 @@ function love.draw()
         end
     end
     Player.anim:draw(Player.spriteSheet, Player.x-12.5, Player.y-25, nil, Window.scale, Window.scale)
+    for i, enemy in pairs(Enemies) do
+        if enemy.direction == 'right' then
+            love.graphics.draw(enemy.sprite, enemy.x+enemy.sprite:getWidth()*Window.scale, enemy.y, nil, -Window.scale, Window.scale)
+        else
+            love.graphics.draw(enemy.sprite, enemy.x, enemy.y, nil, Window.scale, Window.scale)
+        end
+    end
     if TextToRender then
         DrawDialog(TextToRender)
     end

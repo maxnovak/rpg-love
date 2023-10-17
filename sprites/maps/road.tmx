@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="16" tileheight="16" infinite="0" nextlayerid="8" nextobjectid="33">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="16" tileheight="16" infinite="0" nextlayerid="9" nextobjectid="37">
  <editorsettings>
   <export target="road.lua" format="lua"/>
  </editorsettings>
@@ -27,6 +27,18 @@
   <object id="23" name="House" type="Exit" x="16" y="0" width="448" height="16">
    <properties>
     <property name="NextZoneY" value="730"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup id="8" name="Enemies">
+  <object id="33" name="7" type="Enemy" x="176" y="304" width="16" height="16">
+   <properties>
+    <property name="startDirection" value="right"/>
+   </properties>
+  </object>
+  <object id="34" name="2" type="Enemy" x="208" y="304" width="16" height="16">
+   <properties>
+    <property name="startDirection" value="left"/>
    </properties>
   </object>
  </objectgroup>
