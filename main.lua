@@ -1,4 +1,6 @@
 require 'resize'
+require 'combat/setup'
+require 'combat/render'
 require 'player/setup'
 require 'world/setup'
 require 'world/dialogue'
@@ -26,6 +28,11 @@ function love.load()
 end
 
 function love.draw()
+    if Combat.active then
+        DrawCombat()
+        return
+    end
+
     DrawWorld()
 end
 
