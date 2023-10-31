@@ -2,7 +2,8 @@ Combat = {
     active = false,
     currentPlayerHealth = 25,
     maxPlayerHealth = 25,
-    selectedAction = "Fight"
+    selectedAction = "Fight",
+    subselection = false,
 }
 
 CombatActions = {

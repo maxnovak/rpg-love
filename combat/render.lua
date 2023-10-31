@@ -25,6 +25,9 @@ function DrawCombat()
     love.graphics.draw(actionBox, healthBoxX, healthBoxY, nil, Window.scale/healthWidthScale, Window.scale)
 
     DrawActions()
+    if Combat.subselection then
+        DrawSubActions()
+    end
 end
 
 function DrawActions()
@@ -45,4 +48,7 @@ function DrawActions()
             math.modf(i/3)*wordSpacingY*Window.scale+SelectionY+edgeBuffer*Window.scale,
             375, "left", nil, 2, 2)
     end
+end
+
+function DrawSubActions()
 end
