@@ -1,4 +1,5 @@
 require 'resize'
+require 'combat/controls'
 require 'combat/render'
 require 'combat/setup'
 require 'player/setup'
@@ -36,5 +37,10 @@ function love.draw()
 end
 
 function love.update(dt)
+    if Combat.active then
+        ControlCombat(dt)
+        return
+    end
+
     ControlOverworld(dt)
 end
