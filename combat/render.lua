@@ -50,6 +50,48 @@ end
 
 function DrawSubActions(boxImage, x, y)
     love.graphics.draw(boxImage, x, y, nil, Window.scale, Window.scale)
+    if Combat.selectedAction == "Use Item" then
+        Combat.subselectionItem = next(Player.inventory)
+        for item, amount in pairs(Player.inventory) do
+            if item == Combat.subselectionItem then
+                love.graphics.rectangle(
+                    "line",
+                    x+edgeBuffer*Window.scale,
+                    y+edgeBuffer*Window.scale,
+                    50*Window.scale,
+                    15*Window.scale,
+                    5
+                )
+            end
+            love.graphics.printf(
+                {{0, 0, 0, 1}, string.format("%s x%s", item:gsub("^%l", string.upper), amount)},
+                x+edgeBuffer*Window.scale,
+                y+edgeBuffer*Window.scale,
+                375, "left", nil, 2, 2)
+        end
+    end
+    if Combat.selectedAction == "Fight" then
+        Combat.subselectionItem = next(Combat.enemies)
+        local iterator = 0
+        for enemyName, enemyObject in pairs(Combat.enemies) do
+            if enemyName == Combat.subselectionItem then
+                love.graphics.rectangle(
+                    "line",
+                    iterator * wordSpacingX * Window.scale+x+edgeBuffer*Window.scale,
+                    y+edgeBuffer*Window.scale,
+                    50*Window.scale,
+                    15*Window.scale,
+                    5
+                )
+            end
+            love.graphics.printf(
+                {{0, 0, 0, 1}, enemyName},
+                iterator * wordSpacingX * Window.scale+x+edgeBuffer*Window.scale,
+                y+edgeBuffer*Window.scale,
+                375, "left", nil, 2, 2)
+            iterator = iterator + 1
+        end
+    end
 end
 
 function DrawHealthBox(boxImage, x, y)
