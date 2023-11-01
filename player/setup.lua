@@ -13,7 +13,5 @@ function SetUpPlayer()
     Player.animations.right = Anim8.newAnimation(Player.grid('1-4', 3), 0.2)
     Player.animations.up = Anim8.newAnimation(Player.grid('1-4', 4), 0.2)
     Player.anim = Player.animations.down
-    Player.inventory = {
-        carrots = 0,
-    }
+    Player.inventory = {}
 end

@@ -88,7 +88,7 @@ function ControlOverworld(dt)
                  and Event.status == "farmTime"
                  and item.status == "ItemPresent" then
                     Event.carrotCount = Event.carrotCount + 1
-                    Player.inventory.carrots = Player.inventory.carrots + 1
+                    Player.inventory.carrots = (Player.inventory.carrots or 0) + 1
                     item.status = "ItemConsumed"
                     TextToRender = item.text
                     Dialogue.timer = 0.3
