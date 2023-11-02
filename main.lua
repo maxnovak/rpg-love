@@ -1,3 +1,4 @@
+require 'keypressed'
 require 'resize'
 require 'combat/controls'
 require 'combat/render'
@@ -38,7 +39,6 @@ end
 
 function love.update(dt)
     if Combat.active then
-        ControlCombat(dt)
         return
     end
 

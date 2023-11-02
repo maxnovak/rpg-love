@@ -1,19 +1,19 @@
-function ControlCombat(dt)
+function ControlCombat(key)
     if not Combat.subselection then
-        if love.keyboard.isDown("down") or love.keyboard.isDown("s") then
+        if key == "down" or key == "s" then
             Combat.selectedAction = "Run"
         end
-        if love.keyboard.isDown("up") or love.keyboard.isDown("w") then
+        if key == "up" or key == "w" then
             Combat.selectedAction = "Fight"
         end
-        if love.keyboard.isDown("right") or love.keyboard.isDown("d") then
+        if key == "right" or key == "d" then
             Combat.selectedAction = "Use Item"
         end
-        if love.keyboard.isDown("left") or love.keyboard.isDown("a") then
+        if key == "left" or key == "a" then
             Combat.selectedAction = "Fight"
         end
 
-        if love.keyboard.isDown("space") then
+        if key == "space" then
             Combat.subselection = true
         end
     end
