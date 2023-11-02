@@ -17,7 +17,4 @@ function DrawWorld()
             love.graphics.draw(enemy.sprite, enemy.x, enemy.y, nil, Window.scale, Window.scale)
         end
     end
-    if TextToRender then
-        DrawDialog(TextToRender)
-    end
 end

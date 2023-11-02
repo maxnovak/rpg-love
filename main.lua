@@ -35,10 +35,14 @@ function love.draw()
     end
 
     DrawWorld()
+
+    if TextToRender then
+        DrawDialog(TextToRender)
+    end
 end
 
 function love.update(dt)
-    if Combat.active then
+    if Combat.active or TextToRender then
         return
     end
 
