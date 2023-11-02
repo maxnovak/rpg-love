@@ -51,9 +51,8 @@ end
 function DrawSubActions(boxImage, x, y)
     love.graphics.draw(boxImage, x, y, nil, Window.scale, Window.scale)
     if Combat.selectedAction == "Use Item" then
-        Combat.subselectionItem = next(Player.inventory)
-        for item, amount in pairs(Player.inventory) do
-            if item == Combat.subselectionItem then
+        for i, item in pairs(Player.inventory) do
+            if i == Combat.subselectionItem then
                 love.graphics.rectangle(
                     "line",
                     x+edgeBuffer*Window.scale,
@@ -64,17 +63,16 @@ function DrawSubActions(boxImage, x, y)
                 )
             end
             love.graphics.printf(
-                {{0, 0, 0, 1}, string.format("%s x%s", item:gsub("^%l", string.upper), amount)},
+                {{0, 0, 0, 1}, string.format("%s x%s", item.name:gsub("^%l", string.upper), item.number)},
                 x+edgeBuffer*Window.scale,
                 y+edgeBuffer*Window.scale,
                 375, "left", nil, 2, 2)
         end
     end
     if Combat.selectedAction == "Fight" then
-        Combat.subselectionItem = next(Combat.enemies)
         local iterator = 0
-        for enemyName, enemyObject in pairs(Combat.enemies) do
-            if enemyName == Combat.subselectionItem then
+        for i, enemyObject in pairs(Combat.enemies) do
+            if i == Combat.subselectionItem then
                 love.graphics.rectangle(
                     "line",
                     iterator * wordSpacingX * Window.scale+x+edgeBuffer*Window.scale,
@@ -85,7 +83,7 @@ function DrawSubActions(boxImage, x, y)
                 )
             end
             love.graphics.printf(
-                {{0, 0, 0, 1}, enemyName},
+                {{0, 0, 0, 1}, enemyObject.name},
                 iterator * wordSpacingX * Window.scale+x+edgeBuffer*Window.scale,
                 y+edgeBuffer*Window.scale,
                 375, "left", nil, 2, 2)

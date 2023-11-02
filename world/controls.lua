@@ -1,5 +1,6 @@
 require 'world/dialogue'
 require 'world/events'
+require 'world/items'
 
 function PlayerInteract(key)
     if TextToRender then
@@ -42,15 +43,16 @@ function PlayerInteract(key)
                 and item.y*Window.scale == colliders[1]:getY()
                 and Event.status == "farmTime"
                 and item.status == "ItemPresent" then
-                Event.carrotCount = Event.carrotCount + 1
-                Player.inventory.carrots = (Player.inventory.carrots or 0) + 1
+                AddItemToInventory(Carrot)
                 item.status = "ItemConsumed"
                 TextToRender = item.text
                 colliders[1]:setCollisionClass('ItemConsumed')
                 table.insert(ItemToRemove.coordinates, {x = colliders[1]:getX(), y = colliders[1]:getY(), zone = Zone.name})
-                if Event.carrotCount > 3 then
-                    Event.status = "cowTime"
-                    TextToRender = EventPrompt[Event.status]
+                for index, object in ipairs(Player.inventory) do
+                    if object.name == "carrot" and Event.carrotCount == object.amount then
+                        Event.status = "cowTime"
+                        TextToRender = EventPrompt[Event.status]
+                    end
                 end
             end
         end

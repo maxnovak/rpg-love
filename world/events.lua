@@ -1,5 +1,5 @@
 Event = {
-    carrotCount = 0,
+    carrotCount = 4,
     status = "farmTime",
     queuedEvents = {},
 }
