@@ -9,6 +9,7 @@ require 'world/render'
 require 'world/setup'
 
 function love.load()
+    math.randomseed(os.time())
     STI = require 'submodules/simple-tiled-implementation/sti'
     Anim8 = require 'submodules/anim8/anim8'
     Windfield = require 'submodules/windfield/windfield'

@@ -1,3 +1,5 @@
+require "combat/state"
+
 function ControlCombat(key)
     if key == "escape" then
         Combat.subselection = false
@@ -29,6 +31,12 @@ function ControlCombat(key)
     end
 
     if Combat.subselection then
+        if key == "space" then
+            if Combat.selectedAction == "Fight" then
+                DoCombatDamage(Combat.subselectionItem, Combat.maxPlayerDamage)
+                CheckCombatEnd()
+            end
+        end
         if key == "right" then
             if Combat.selectedAction == "Fight" then
                 if Combat.subselectionItem == #Combat.enemies then
@@ -49,5 +57,4 @@ function ControlCombat(key)
             Combat.subselectionItem = Combat.subselectionItem - 1
         end
     end
-
 end

@@ -4,6 +4,7 @@ Combat = {
     maxPlayerHealth = 25,
     selectedAction = "Fight",
     subselection = false,
+    maxPlayerDamage = 10,
 }
 
 CombatActions = {
