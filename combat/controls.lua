@@ -3,12 +3,23 @@ require "combat/state"
 function ControlCombat(key)
     if TextToRender then
         if key == "space" then
-            TextToRender = nil
+            if #Event.queuedEvents > 0 then
+                TextToRender = Event.queuedEvents[1]
+                table.remove(Event.queuedEvents)
+            else
+                TextToRender = nil
+            end
         end
         return
     end
     if key == "escape" then
         Combat.subselection = false
+    end
+
+    if key == "space" and Combat.selectedAction == "Run" then
+        TextToRender = "Got away"
+        Combat.active = false
+        return
     end
 
     if not Combat.subselection then
@@ -29,18 +40,13 @@ function ControlCombat(key)
             Combat.subselectionItem = 1
             return
         end
-        if key == "space" and Combat.selectedAction == "Run" then
-            TextToRender = "Got away"
-            Combat.active = false
-            return
-        end
     end
 
     if Combat.subselection then
         if key == "space" then
             if Combat.selectedAction == "Fight" then
                 DoCombatDamage(Combat.subselectionItem, Combat.maxPlayerDamage)
-                CheckCombatEnd()
+                CheckPlayerVictory()
             end
             if Combat.selectedAction == "Use Item" then
                 if #Player.inventory == 0 then
@@ -50,6 +56,8 @@ function ControlCombat(key)
                 end
                 UseItem(Combat.subselectionItem)
             end
+            EnemyAction()
+            CheckPlayerLoss()
         end
         if key == "right" then
             if Combat.selectedAction == "Fight" then

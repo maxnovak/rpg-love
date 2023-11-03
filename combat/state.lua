@@ -7,9 +7,17 @@ function DoCombatDamage(unitID, maxDamage)
     end
 end
 
-function CheckCombatEnd()
+function CheckPlayerVictory()
     if #Combat.enemies == 0 then
         Combat.active = false
+        TextToRender = "You kicked their butts"
+    end
+end
+
+function CheckPlayerLoss()
+    if Combat.currentPlayerHealth <= 0 then
+        Combat.active = false
+        TextToRender = "You Died"
     end
 end
 
@@ -31,5 +39,11 @@ function UseItem(itemID)
         if item.number <= 0 then
             table.remove(Player.inventory, itemID)
         end
+
     end
+end
+
+function EnemyAction()
+    table.insert(Event.queuedEvents, "They hit you in the face for 5 damage")
+    Combat.currentPlayerHealth = Combat.currentPlayerHealth - 5
 end
