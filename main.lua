@@ -30,12 +30,13 @@ function love.load()
 end
 
 function love.draw()
-    if Combat.active then
-        DrawCombat()
-        return
+    if not Combat.active then
+        DrawWorld()
     end
 
-    DrawWorld()
+    if Combat.active then
+        DrawCombat()
+    end
 
     if TextToRender then
         DrawDialog(TextToRender)

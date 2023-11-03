@@ -1,6 +1,12 @@
 require "combat/state"
 
 function ControlCombat(key)
+    if TextToRender then
+        if key == "space" then
+            TextToRender = nil
+        end
+        return
+    end
     if key == "escape" then
         Combat.subselection = false
     end
@@ -35,6 +41,14 @@ function ControlCombat(key)
             if Combat.selectedAction == "Fight" then
                 DoCombatDamage(Combat.subselectionItem, Combat.maxPlayerDamage)
                 CheckCombatEnd()
+            end
+            if Combat.selectedAction == "Use Item" then
+                if #Player.inventory == 0 then
+                    TextToRender = "You have nothing to use"
+                    Combat.subselection = false
+                    return
+                end
+                UseItem(Combat.subselectionItem)
             end
         end
         if key == "right" then

@@ -1,7 +1,8 @@
 Items = {}
 Carrot = {
     name="carrot",
-    amount = 1
+    amount = 1,
+    healAmount = 10,
 }
 
 function SpawnItems(object)
