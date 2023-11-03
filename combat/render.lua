@@ -94,4 +94,24 @@ end
 
 function DrawHealthBox(boxImage, x, y)
     love.graphics.draw(boxImage, x, y, nil, Window.scale/healthWidthScale, Window.scale)
+    love.graphics.printf(
+        {{0, 0, 0, 1}, "Health"},
+        x+edgeBuffer*Window.scale,
+        y+edgeBuffer*Window.scale,
+        375, "left", nil, 2, 2)
+    love.graphics.setColor(love.math.colorFromBytes(178, 34, 34))
+    love.graphics.rectangle(
+            "fill",
+            x+edgeBuffer*Window.scale,
+            y+edgeBuffer*Window.scale*2,
+            175*Window.scale*(Combat.currentPlayerHealth/Combat.maxPlayerHealth),
+            12*Window.scale,
+            5
+        )
+    love.graphics.setColor(1, 1, 1, 1)
+    love.graphics.printf(
+        {{0, 0, 0, 1}, string.format("%s / %s", Combat.currentPlayerHealth, Combat.maxPlayerHealth)},
+        x+10+edgeBuffer*Window.scale,
+        y+edgeBuffer*Window.scale*2,
+        375, "left", nil, 2, 2)
 end
