@@ -63,7 +63,7 @@ function DrawSubActions(boxImage, x, y)
                 )
             end
             love.graphics.printf(
-                {{0, 0, 0, 1}, string.format("%s x%s", item.name:gsub("^%l", string.upper), item.number)},
+                {{0, 0, 0, 1}, string.format("%s x%s", item.name:gsub("^%l", string.upper), item.amount)},
                 x+edgeBuffer*Window.scale,
                 y+edgeBuffer*Window.scale,
                 375, "left", nil, 2, 2)

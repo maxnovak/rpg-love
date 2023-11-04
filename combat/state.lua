@@ -35,8 +35,8 @@ function UseItem(itemID)
         else
             Combat.currentPlayerHealth = Combat.currentPlayerHealth + healAmount
         end
-        item.number = item.number - 1
-        if item.number <= 0 then
+        item.amount = item.amount - 1
+        if item.amount <= 0 then
             table.remove(Player.inventory, itemID)
         end
 
@@ -44,6 +44,6 @@ function UseItem(itemID)
 end
 
 function EnemyAction()
-    table.insert(Event.queuedEvents, "They hit you in the face for 5 damage")
+    TextToRender = "They hit you in the face for 5 damage"
     Combat.currentPlayerHealth = Combat.currentPlayerHealth - 5
 end
