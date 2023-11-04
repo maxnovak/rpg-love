@@ -46,7 +46,12 @@ function ControlCombat(key)
         if key == "space" then
             if Combat.selectedAction == "Fight" then
                 DoCombatDamage(Combat.subselectionItem, Combat.maxPlayerDamage)
-                CheckPlayerVictory()
+                if CheckPlayerVictory() then
+                    Combat.active = false
+                    TextToRender = "You kicked their butts"
+                    return
+                end
+                EnemyAction()
             end
             if Combat.selectedAction == "Use Item" then
                 if #Player.inventory == 0 then
@@ -56,8 +61,8 @@ function ControlCombat(key)
                 end
                 UseItem(Combat.subselectionItem)
             end
-            EnemyAction()
             CheckPlayerLoss()
+            return
         end
         if key == "right" then
             if Combat.selectedAction == "Fight" then

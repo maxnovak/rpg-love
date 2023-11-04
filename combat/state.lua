@@ -9,9 +9,9 @@ end
 
 function CheckPlayerVictory()
     if #Combat.enemies == 0 then
-        Combat.active = false
-        TextToRender = "You kicked their butts"
+        return true
     end
+    return false
 end
 
 function CheckPlayerLoss()
