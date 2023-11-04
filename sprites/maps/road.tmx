@@ -21,7 +21,8 @@
    <properties>
     <property name="NextZoneY" value="70"/>
     <property name="blockingEvent" value="cowTime,getWeapon"/>
-    <property name="blockingText" value="You hear some people in the distance"/>
+    <property name="blockingText" value="There are some people here blocking the way. Best not to mess with them."/>
+    <property name="triggerBattle" value="weaponAquired"/>
    </properties>
   </object>
   <object id="23" name="House" type="Exit" x="16" y="0" width="448" height="16">

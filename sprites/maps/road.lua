@@ -234,7 +234,8 @@ return {
           properties = {
             ["NextZoneY"] = "70",
             ["blockingEvent"] = "cowTime,getWeapon",
-            ["blockingText"] = "You hear some people in the distance"
+            ["blockingText"] = "There are some people here blocking the way. Best not to mess with them.",
+            ["triggerBattle"] = "weaponAquired"
           }
         },
         {

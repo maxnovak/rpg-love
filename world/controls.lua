@@ -32,6 +32,7 @@ function PlayerInteract(key)
                 if sign.triggerEvent and Event.status == sign.requiredStatus then
                     if sign.replaceText then
                         TextToRender = EventPrompt[sign.triggerEvent]
+                        Event.status = sign.triggerEvent
                     else
                         table.insert(Event.queuedEvents, sign.triggerEvent)
                     end
