@@ -5,9 +5,13 @@ function ControlCombat(key)
         if key == "space" then
             if #Event.queuedEvents > 0 then
                 TextToRender = Event.queuedEvents[1]
-                table.remove(Event.queuedEvents)
+                table.remove(Event.queuedEvents, 1)
+                return
             else
                 TextToRender = nil
+            end
+            if Combat.runAttempts == 3 and #Event.queuedEvents == 0 then
+                Combat.active = false
             end
         end
         return
@@ -17,8 +21,23 @@ function ControlCombat(key)
     end
 
     if key == "space" and Combat.selectedAction == "Run" then
-        TextToRender = "Got away"
-        Combat.active = false
+        if Combat.runAttempts == 0 then
+            TextToRender = "Hey y'all I just want my cow back. Can you just hand it over?"
+            table.insert(Event.queuedEvents, "Guy1: What cow? We were told to stop people from crossing here so just hangout.")
+            table.insert(Event.queuedEvents, "Um no? I'm gunna beat you up until you give me my cow!")
+        end
+        if Combat.runAttempts == 1 then
+            TextToRender = "Why did someone tell you to block this road? It only leads to my house..."
+            table.insert(Event.queuedEvents, "Guy 2: Hmm great question. The boss just said wait here...")
+            table.insert(Event.queuedEvents, "Guy 1: Yeah I guess he might not have said we need to block the road.")
+        end
+        if Combat.runAttempts == 2 then
+            TextToRender = "So he didn't actually tell you to block people?"
+            table.insert(Event.queuedEvents, "Guy 2: I guess, not?")
+            table.insert(Event.queuedEvents, "So can I go through then?")
+            table.insert(Event.queuedEvents, "Guy 1: Sure I guess. Good luck finding your cow!")
+        end
+        Combat.runAttempts = Combat.runAttempts + 1
         return
     end
 

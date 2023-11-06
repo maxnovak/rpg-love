@@ -30,7 +30,7 @@
  <objectgroup id="5" name="Interactable">
   <object id="7" name="TownSign" type="Sign" x="416" y="224" width="16" height="16">
    <properties>
-    <property name="actionText" value="Village →"/>
+    <property name="actionText" value="Village =>"/>
    </properties>
   </object>
   <object id="8" name="Door" type="Sign" x="32" y="256" width="16" height="16">

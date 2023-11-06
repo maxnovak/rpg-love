@@ -371,7 +371,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["actionText"] = "Village →"
+            ["actionText"] = "Village =>"
           }
         },
         {

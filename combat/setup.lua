@@ -5,6 +5,7 @@ Combat = {
     selectedAction = "Fight",
     subselection = false,
     maxPlayerDamage = 10,
+    runAttempts = 0,
 }
 
 CombatActions = {
