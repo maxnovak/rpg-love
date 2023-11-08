@@ -23,6 +23,7 @@ function SetupWorld()
 end
 
 function LoadZone(zoneName, playerX, playerY)
+    Player.stop = true
     colliderTableDestroy(Walls)
     colliderTableDestroy(Interactables)
     colliderTableDestroy(Enemies)
@@ -37,6 +38,7 @@ function LoadZone(zoneName, playerX, playerY)
 
     Zone = STI(MapName[zoneName])
     Zone.name = zoneName
+    Zone.alpha = 1
 
     if Zone.layers["Walls"] then
         for i, wall in pairs(Zone.layers["Walls"].objects) do
@@ -80,6 +82,8 @@ function LoadZone(zoneName, playerX, playerY)
             table.insert(Enemies, enemy)
         end
     end
+
+    Flux.to(Zone, 0.5, {alpha = 0}):ease("linear")
 end
 
 -- Used for tables of colliders

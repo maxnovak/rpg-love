@@ -61,6 +61,9 @@ function PlayerInteract(key)
 end
 
 function ControlOverworld(dt)
+    if Player.stop == true then
+        return
+    end
     local isMoving = false
     local vx = 0
     local vy = 0

@@ -17,4 +17,10 @@ function DrawWorld()
             love.graphics.draw(enemy.sprite, enemy.x, enemy.y, nil, Window.scale, Window.scale)
         end
     end
+
+    if Zone.alpha > 0 then
+        love.graphics.setColor(0, 0, 0, Zone.alpha)
+        love.graphics.rectangle("fill", -10, -10, love.graphics.getWidth() + 20, love.graphics.getHeight() + 20)
+        love.graphics.setColor(1, 1, 1, 1)
+    end
 end

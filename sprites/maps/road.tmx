@@ -43,7 +43,7 @@
    </properties>
   </object>
  </objectgroup>
- <objectgroup id="6" name="Walls" opacity="0">
+ <objectgroup id="6" name="Walls">
   <object id="9" name="Tree" x="96" y="160" width="48" height="64"/>
   <object id="13" name="Trees Edge" x="0" y="0" width="16" height="320"/>
   <object id="14" name="Trees Edge" x="0" y="304" width="176" height="16"/>

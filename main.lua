@@ -13,6 +13,7 @@ function love.load()
     STI = require 'submodules/simple-tiled-implementation/sti'
     Anim8 = require 'submodules/anim8/anim8'
     Windfield = require 'submodules/windfield/windfield'
+    Flux = require 'submodules/flux/flux'
 
     love.graphics.setDefaultFilter("nearest", "nearest")
 
@@ -44,6 +45,11 @@ function love.draw()
 end
 
 function love.update(dt)
+    Flux.update(dt)
+    if Zone.alpha == 0 then
+        Player.stop = false
+    end
+
     if Combat.active or TextToRender then
         return
     end
