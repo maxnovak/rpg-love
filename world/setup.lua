@@ -27,6 +27,8 @@ function LoadZone(zoneName, playerX, playerY)
     colliderTableDestroy(Walls)
     colliderTableDestroy(Interactables)
     colliderTableDestroy(Enemies)
+    removeTable(Signs)
+    removeTable(Items)
 
     if playerX == nil then
         playerX = Player.collider:getX()
