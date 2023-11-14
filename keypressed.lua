@@ -1,4 +1,9 @@
+require 'menu/controls'
+
 function love.keypressed(key, scancode, isrepeat)
+    if Start and key == "space" then
+        ControlStartMenu()
+    end
     if isrepeat then
         return
     end

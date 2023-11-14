@@ -3,6 +3,7 @@ require 'resize'
 require 'combat/controls'
 require 'combat/render'
 require 'combat/setup'
+require 'menu/start'
 require 'player/setup'
 require 'world/controls'
 require 'world/render'
@@ -25,12 +26,19 @@ function love.load()
     ItemToRemove.imageQuad = love.graphics.newQuad(32, 16, 16, 16, ItemToRemove.newImage)
     ItemToRemove.coordinates = {}
 
+    Start = true
+
     SetupWorld()
     SetUpPlayer()
     LoadZone("House")
 end
 
 function love.draw()
+    if Start then
+        DrawIntroScreen()
+        return
+    end
+
     if not Combat.active then
         DrawWorld()
     end
@@ -45,6 +53,9 @@ function love.draw()
 end
 
 function love.update(dt)
+    if Start then
+        return
+    end
     Flux.update(dt)
     if Zone.alpha == 0 then
         Player.stop = false
