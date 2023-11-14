@@ -1,8 +1,10 @@
 Player = {}
 
 function SetUpPlayer()
-    Player = {x = 530, y = 20, speed = 300}
+    Player = {x = 1045, y = 240, speed = 300}
     Player.collider = World:newBSGRectangleCollider(Player.x, Player.y, 30, 40, 10)
+    Player.x = Player.collider:getX()
+    Player.y = Player.collider:getY()
     Player.collider:setCollisionClass('Player')
     Player.collider:setFixedRotation(true)
     Player.spriteSheet = love.graphics.newImage('sprites/characters/player-sheet.png')
@@ -13,5 +15,6 @@ function SetUpPlayer()
     Player.animations.right = Anim8.newAnimation(Player.grid('1-4', 3), 0.2)
     Player.animations.up = Anim8.newAnimation(Player.grid('1-4', 4), 0.2)
     Player.anim = Player.animations.down
+    Player.anim:gotoFrame(2)
     Player.inventory = {}
 end
